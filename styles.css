@@ -1,0 +1,319 @@
+/* ============================================
+   Rathaus Open Air Celle — Custom Styles
+   ============================================ */
+
+/* Tailwind Custom Colors (defined inline via config) */
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1E3456;
+}
+::-webkit-scrollbar-thumb {
+  background: #3A7BBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4A017;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #3A7BBF #1E3456;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- Glassmorphism ---------- */
+.glass {
+  background: rgba(30, 52, 86, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  background: rgba(30, 52, 86, 0.92) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D4A017;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ---------- Hero ---------- */
+.hero-bg {
+  background-image:
+    linear-gradient(to bottom, rgba(30, 52, 86, 0.55), rgba(30, 52, 86, 0.80)),
+    url('WhatsApp Image 2026-02-11 at 11.06.22.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Gold CTA Button ---------- */
+.btn-gold {
+  background: linear-gradient(135deg, #D4A017, #B8860B);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
+}
+
+.btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Stat Cards ---------- */
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Highlight Cards ---------- */
+.highlight-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Gallery Placeholders ---------- */
+.gallery-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.gallery-card:hover {
+  transform: scale(1.03);
+}
+.gallery-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30, 52, 86, 0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ---------- Programm / Schedule ---------- */
+.stage-tab {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+.stage-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.stage-tab.active {
+  background: linear-gradient(135deg, #D4A017, #B8860B);
+  color: #fff;
+  border-color: transparent;
+}
+
+.schedule-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.schedule-card:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.schedule-card.highlight {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.15), rgba(184, 134, 11, 0.08));
+  border: 1px solid rgba(212, 160, 23, 0.35);
+}
+.schedule-card.highlight:hover {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.22), rgba(184, 134, 11, 0.12));
+}
+
+/* ---------- Anfahrt Info Cards ---------- */
+.info-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Partner Section ---------- */
+.partner-placeholder {
+  border: 2px dashed rgba(58, 123, 191, 0.25);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+/* ---------- Footer ---------- */
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #D4A017;
+}
+
+/* ---------- Mobile Menu ---------- */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Initially hidden for scroll-trigger */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Wave SVG ---------- */
+.wave-section {
+  margin-top: -2px;
+  line-height: 0;
+}
+.wave-section svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Section Badge ---------- */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+}

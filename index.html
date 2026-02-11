@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rathaus Open Air Celle — Kinderland, Streetfood, Live-Musik & Public Viewing</title>
+  <meta name="description" content="Rathaus Open Air im Stadtpark Celle: Kinderland, Streetfood, 2 Bühnen Live-Musik und Public Viewing des Deutschland WM-Spiels." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'celle-blue': '#3A7BBF',
+            'celle-dark': '#1E3456',
+            'celle-gold': '#D4A017',
+            'celle-gold-dark': '#B8860B',
+            'celle-sand': '#f4f4f4',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="font-body text-gray-800 bg-white">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="navbar glass fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#" class="flex flex-col leading-tight">
+        <span class="font-heading font-extrabold text-white text-lg tracking-wide">Rathaus Open Air</span>
+        <span class="text-xs text-celle-gold font-semibold tracking-widest uppercase">Celle &bull; Stadtpark</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#highlights" class="nav-link text-sm font-semibold text-white/80 hover:text-white">Highlights</a>
+        <a href="#programm" class="nav-link text-sm font-semibold text-white/80 hover:text-white">Programm</a>
+        <a href="#anfahrt" class="nav-link text-sm font-semibold text-white/80 hover:text-white">Anfahrt</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-white p-2" aria-label="Menu öffnen">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60] bg-celle-dark/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8">
+    <button id="close-menu" class="absolute top-5 right-5 text-white p-2" aria-label="Menu schließen">
+      <i data-lucide="x" class="w-7 h-7"></i>
+    </button>
+    <a href="#highlights" class="text-2xl font-heading font-bold text-white hover:text-celle-gold transition-colors">Highlights</a>
+    <a href="#programm" class="text-2xl font-heading font-bold text-white hover:text-celle-gold transition-colors">Programm</a>
+    <a href="#anfahrt" class="text-2xl font-heading font-bold text-white hover:text-celle-gold transition-colors">Anfahrt</a>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-bg relative min-h-screen flex items-center justify-center text-center px-4">
+    <!-- Subtle bottom gradient -->
+    <div class="absolute inset-0 bg-gradient-to-t from-celle-dark/40 to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto pt-20">
+      <!-- Date Badge -->
+      <div class="inline-flex items-center gap-2 bg-celle-gold/90 text-white text-sm font-bold px-5 py-2 rounded-full mb-6 animate-fade-in-up">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        Datum folgt
+      </div>
+
+      <!-- Title -->
+      <h1 class="hero-title font-heading font-black text-6xl md:text-8xl lg:text-9xl text-white leading-none mb-2 animate-fade-in-up animate-delay-100">
+        RATHAUS
+      </h1>
+      <h1 class="hero-title font-heading font-black text-6xl md:text-8xl lg:text-9xl text-celle-gold leading-none mb-6 animate-fade-in-up animate-delay-200">
+        OPEN AIR
+      </h1>
+
+      <!-- Location -->
+      <p class="text-white/80 text-xl md:text-2xl font-medium mb-4 animate-fade-in-up animate-delay-300">
+        <i data-lucide="map-pin" class="w-5 h-5 inline-block mr-1 -mt-1"></i>
+        Stadtpark Celle
+      </p>
+
+      <!-- Tagline -->
+      <p class="text-white/60 text-base md:text-lg mb-10 animate-fade-in-up animate-delay-300">
+        Kinderland &bull; Streetfood &bull; Live-Musik &bull; Public Viewing
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in-up animate-delay-400">
+        <a href="#programm" class="btn-gold px-8 py-3 rounded-full font-bold text-sm tracking-wide inline-flex items-center gap-2">
+          <i data-lucide="music" class="w-4 h-4"></i>
+          Zum Programm
+        </a>
+        <a href="#anfahrt" class="btn-outline px-8 py-3 rounded-full font-bold text-sm tracking-wide inline-flex items-center gap-2">
+          <i data-lucide="navigation" class="w-4 h-4"></i>
+          Anfahrt
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 animate-fade-in-up animate-delay-500">
+        <div class="stat-card rounded-xl px-6 py-3 text-center">
+          <p class="text-2xl font-heading font-bold text-white">1</p>
+          <p class="text-xs text-white/60 font-semibold uppercase tracking-wider">Tag</p>
+        </div>
+        <div class="stat-card rounded-xl px-6 py-3 text-center">
+          <p class="text-2xl font-heading font-bold text-celle-gold">2</p>
+          <p class="text-xs text-white/60 font-semibold uppercase tracking-wider">Bühnen</p>
+        </div>
+        <div class="stat-card rounded-xl px-6 py-3 text-center">
+          <p class="text-2xl font-heading font-bold text-white flex items-center gap-1">
+            <i data-lucide="tv" class="w-5 h-5 text-celle-gold"></i> Live
+          </p>
+          <p class="text-xs text-white/60 font-semibold uppercase tracking-wider">Public Viewing</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <i data-lucide="chevrons-down" class="w-6 h-6 text-white/40"></i>
+    </div>
+  </section>
+
+  <!-- ========== WAVE TRANSITION ========== -->
+  <div class="wave-section bg-white">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C360,100 1080,100 1440,0 L1440,120 L0,120 Z" fill="white"/>
+      <path d="M0,40 C320,110 720,110 1080,60 C1280,30 1400,50 1440,40 L1440,120 L0,120 Z" fill="white" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- ========== HIGHLIGHTS SECTION ========== -->
+  <section id="highlights" class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <div class="section-badge bg-celle-blue/10 text-celle-blue mb-4 mx-auto w-fit">
+          <i data-lucide="star" class="w-3.5 h-3.5"></i>
+          Highlights
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-celle-dark mb-4">
+          Das erwartet dich
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Ein Tag voller Musik, Unterhaltung und Genuss im Herzen von Celle.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Public Viewing -->
+        <div class="highlight-card p-6 reveal">
+          <div class="highlight-icon bg-celle-gold/10 text-celle-gold mb-4">
+            <i data-lucide="tv" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-celle-dark mb-2">Public Viewing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Deutschland WM-Spiel live auf Großleinwand im Stadtpark.</p>
+        </div>
+
+        <!-- 2 Bühnen -->
+        <div class="highlight-card p-6 reveal">
+          <div class="highlight-icon bg-celle-blue/10 text-celle-blue mb-4">
+            <i data-lucide="music" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-celle-dark mb-2">2 Bühnen</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Live-Musik und Entertainment auf Hauptbühne und Parkbühne.</p>
+        </div>
+
+        <!-- Kinderland -->
+        <div class="highlight-card p-6 reveal">
+          <div class="highlight-icon bg-green-100 text-green-600 mb-4">
+            <i data-lucide="smile" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-celle-dark mb-2">Kinderland</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Hüpfburg, Kinderschminken und jede Menge Spaß für die Kleinen.</p>
+        </div>
+
+        <!-- Streetfood -->
+        <div class="highlight-card p-6 reveal">
+          <div class="highlight-icon bg-orange-100 text-orange-500 mb-4">
+            <i data-lucide="utensils" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-celle-dark mb-2">Streetfood</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Kulinarische Vielfalt aus aller Welt — von Burger bis Crêpes.</p>
+        </div>
+      </div>
+
+      <!-- Gallery Placeholders -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-blue to-celle-dark flex items-center justify-center">
+          <i data-lucide="music" class="w-10 h-10 text-white/30"></i>
+          <div class="overlay">
+            <span class="text-white text-sm font-semibold">Live-Musik</span>
+          </div>
+        </div>
+        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-gold to-celle-gold-dark flex items-center justify-center">
+          <i data-lucide="utensils" class="w-10 h-10 text-white/30"></i>
+          <div class="overlay">
+            <span class="text-white text-sm font-semibold">Streetfood</span>
+          </div>
+        </div>
+        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+          <i data-lucide="smile" class="w-10 h-10 text-white/30"></i>
+          <div class="overlay">
+            <span class="text-white text-sm font-semibold">Kinderland</span>
+          </div>
+        </div>
+        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-dark to-gray-900 flex items-center justify-center">
+          <i data-lucide="tv" class="w-10 h-10 text-white/30"></i>
+          <div class="overlay">
+            <span class="text-white text-sm font-semibold">Public Viewing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRAMM SECTION ========== -->
+  <section id="programm" class="bg-celle-dark py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 reveal">
+        <div class="section-badge bg-celle-gold/15 text-celle-gold mb-4 mx-auto w-fit">
+          <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+          Programm
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-white mb-4">
+          Tagesablauf
+        </h2>
+        <p class="text-white/50 max-w-xl mx-auto">
+          Alle Acts und Events auf einen Blick — ein Tag voller Highlights.
+        </p>
+      </div>
+
+      <!-- Stage Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10 reveal">
+        <button class="stage-tab active" data-stage="alle">Alle</button>
+        <button class="stage-tab" data-stage="hauptbuehne">Hauptbühne</button>
+        <button class="stage-tab" data-stage="parkbuehne">Parkbühne</button>
+      </div>
+
+      <!-- Schedule Cards -->
+      <div class="space-y-4">
+
+        <!-- 11:00 Eröffnung -->
+        <div class="schedule-card schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">11:00</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Hauptbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Offizielle Eröffnung</h4>
+              <p class="text-white/50 text-sm">Begrüßung durch den Bürgermeister und Eröffnung des Rathaus Open Air</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11:30 Kindershow -->
+        <div class="schedule-card schedule-item reveal" data-stage="parkbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">11:30</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Parkbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Clown Pepino &mdash; Kindershow</h4>
+              <p class="text-white/50 text-sm">Zaubershow und Mitmach-Programm für Kinder</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12:30 Akustik-Duo -->
+        <div class="schedule-card schedule-item reveal" data-stage="parkbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">12:30</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Parkbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Akustik-Duo &bdquo;Sommertöne&ldquo;</h4>
+              <p class="text-white/50 text-sm">Entspannte Akustik-Covers von Pop und Folk</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13:00 Live-Band -->
+        <div class="schedule-card schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">13:00</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Hauptbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">The Groove Collective</h4>
+              <p class="text-white/50 text-sm">Funk, Soul & Pop — die Partyband aus Hannover</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14:30 Public Viewing (Highlight) -->
+        <div class="schedule-card highlight schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">14:30</span>
+              <span class="text-xs text-celle-gold/80 bg-celle-gold/15 px-2 py-0.5 rounded-full font-bold">Hauptbühne</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="tv" class="w-5 h-5 text-celle-gold"></i>
+                <h4 class="text-celle-gold font-bold text-lg">Public Viewing: Deutschland WM-Spiel</h4>
+              </div>
+              <p class="text-white/60 text-sm">Das Spiel live auf Großleinwand — gemeinsam anfeuern im Stadtpark!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16:30 Singer-Songwriter -->
+        <div class="schedule-card schedule-item reveal" data-stage="parkbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">16:30</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Parkbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Lena Meier &mdash; Singer-Songwriter</h4>
+              <p class="text-white/50 text-sm">Eigene Songs und Storytelling auf der Parkbühne</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17:30 Blaskapelle -->
+        <div class="schedule-card schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">17:30</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Hauptbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Celler Blasorchester</h4>
+              <p class="text-white/50 text-sm">Traditionelle und moderne Blasmusik aus der Region</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19:00 DJ Set -->
+        <div class="schedule-card schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">19:00</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Hauptbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">DJ Malte &mdash; Sunset Session</h4>
+              <p class="text-white/50 text-sm">House & Deep Vibes zum Sonnenuntergang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20:00 Indie-Rock -->
+        <div class="schedule-card schedule-item reveal" data-stage="parkbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">20:00</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Parkbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Neonlicht &mdash; Indie Rock</h4>
+              <p class="text-white/50 text-sm">Energiegeladener Indie-Rock zum Abtanzen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 21:00 Headliner -->
+        <div class="schedule-card schedule-item reveal" data-stage="hauptbuehne">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div class="flex items-center gap-3 sm:w-40 shrink-0">
+              <span class="text-celle-gold font-heading font-bold text-lg">21:00</span>
+              <span class="text-xs text-white/40 bg-white/10 px-2 py-0.5 rounded-full">Hauptbühne</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Stadtpark Allstars &mdash; Party-Coverband</h4>
+              <p class="text-white/50 text-sm">Die besten Hits der letzten Jahrzehnte — der krönende Abschluss!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WAVE TRANSITION (dark → white) ========== -->
+  <div class="wave-section bg-white">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,60 C360,100 1080,20 1440,60 L1440,0 Z" fill="#1E3456"/>
+    </svg>
+  </div>
+
+  <!-- ========== ANFAHRT SECTION ========== -->
+  <section id="anfahrt" class="bg-white py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <div class="section-badge bg-celle-blue/10 text-celle-blue mb-4 mx-auto w-fit">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          Anfahrt
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-celle-dark mb-4">
+          So findest du uns
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">
+          Das Rathaus Open Air findet im Stadtpark am Neuen Rathaus in Celle statt.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <!-- Map -->
+        <div class="rounded-2xl overflow-hidden shadow-lg reveal">
+          <iframe
+            title="Stadtpark Celle, Neues Rathaus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2415.6!2d10.0803!3d52.6234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b0557c0b10e8e1%3A0x4236659f80c5e5!2sNeues+Rathaus+Celle!5e0!3m2!1sde!2sde!4v1700000000000"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="space-y-4">
+          <!-- Veranstaltungsort -->
+          <div class="info-card flex gap-4 reveal">
+            <div class="highlight-icon bg-celle-blue/10 text-celle-blue shrink-0">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-celle-dark mb-1">Veranstaltungsort</h4>
+              <p class="text-gray-500 text-sm">Stadtpark am Neuen Rathaus<br>Am Französischen Garten 1<br>29221 Celle</p>
+            </div>
+          </div>
+
+          <!-- Auto -->
+          <div class="info-card flex gap-4 reveal">
+            <div class="highlight-icon bg-celle-gold/10 text-celle-gold shrink-0">
+              <i data-lucide="car" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-celle-dark mb-1">Mit dem Auto</h4>
+              <p class="text-gray-500 text-sm">Parkmöglichkeiten in den umliegenden Parkhäusern der Innenstadt. Wir empfehlen die Anreise mit öffentlichen Verkehrsmitteln.</p>
+            </div>
+          </div>
+
+          <!-- Bahn -->
+          <div class="info-card flex gap-4 reveal">
+            <div class="highlight-icon bg-green-100 text-green-600 shrink-0">
+              <i data-lucide="train-front" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-celle-dark mb-1">Mit der Bahn</h4>
+              <p class="text-gray-500 text-sm">Bahnhof Celle — ca. 15 Minuten Fußweg oder kurze Busfahrt zum Veranstaltungsgelände.</p>
+            </div>
+          </div>
+
+          <!-- Fahrrad -->
+          <div class="info-card flex gap-4 reveal">
+            <div class="highlight-icon bg-orange-100 text-orange-500 shrink-0">
+              <i data-lucide="bike" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-celle-dark mb-1">Mit dem Fahrrad</h4>
+              <p class="text-gray-500 text-sm">Fahrradstellplätze direkt am Stadtpark vorhanden. Celle ist bestens per Rad erreichbar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTNER SECTION ========== -->
+  <section id="partner" class="bg-celle-sand py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <div class="section-badge bg-celle-blue/10 text-celle-blue mb-4 mx-auto w-fit">
+          <i data-lucide="handshake" class="w-3.5 h-3.5"></i>
+          Partner
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-celle-dark mb-4">
+          Partner & Sponsoren
+        </h2>
+      </div>
+
+      <div class="partner-placeholder text-center reveal">
+        <i data-lucide="users" class="w-12 h-12 text-celle-blue/30 mx-auto mb-4"></i>
+        <p class="text-gray-400 text-lg font-medium">Partner werden bald bekannt gegeben.</p>
+        <p class="text-gray-400 text-sm mt-2">Interesse an einer Partnerschaft? Kontaktieren Sie uns!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-celle-dark border-t-4 border-celle-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Branding -->
+        <div class="text-center md:text-left">
+          <p class="font-heading font-extrabold text-white text-xl tracking-wide">RATHAUS OPEN AIR</p>
+          <p class="text-celle-gold text-sm font-semibold tracking-widest uppercase">Celle &bull; Stadtpark</p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex items-center gap-6 text-sm">
+          <a href="#" class="footer-link">Impressum</a>
+          <a href="#" class="footer-link">Datenschutz</a>
+          <a href="#" class="footer-link">Kontakt</a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-8 pt-6 text-center">
+        <p class="text-white/40 text-xs">
+          &copy; 2026 Rathaus Open Air Celle. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
