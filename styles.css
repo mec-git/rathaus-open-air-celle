@@ -76,7 +76,7 @@ body {
 .hero-bg {
   background-image:
     linear-gradient(to bottom, rgba(30, 52, 86, 0.55), rgba(30, 52, 86, 0.80)),
-    url('WhatsApp Image 2026-02-11 at 11.06.22.jpeg');
+    url('hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -144,28 +144,13 @@ body {
   justify-content: center;
 }
 
-/* ---------- Gallery Placeholders ---------- */
-.gallery-card {
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s ease;
+/* ---------- Bento Gallery ---------- */
+.bento-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.4s ease;
 }
-.gallery-card:hover {
-  transform: scale(1.03);
-}
-.gallery-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(30, 52, 86, 0.7), transparent);
-  display: flex;
-  align-items: flex-end;
-  padding: 1.25rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.gallery-card:hover .overlay {
-  opacity: 1;
+.bento-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* ---------- Programm / Schedule ---------- */

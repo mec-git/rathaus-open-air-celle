@@ -207,32 +207,70 @@
         </div>
       </div>
 
-      <!-- Gallery Placeholders -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-blue to-celle-dark flex items-center justify-center">
-          <i data-lucide="music" class="w-10 h-10 text-white/30"></i>
-          <div class="overlay">
-            <span class="text-white text-sm font-semibold">Live-Musik</span>
+      <!-- Bento Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[200px] gap-3 reveal">
+
+        <!-- Live-Musik — groß links -->
+        <div class="bento-card group col-span-2 row-span-2 relative rounded-2xl overflow-hidden">
+          <img src="gallery-livemusik.jpg" alt="Live-Musik auf der Hauptbühne" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-celle-dark/80 via-celle-dark/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-8 h-8 rounded-lg bg-celle-gold/20 backdrop-blur-sm flex items-center justify-center">
+                <i data-lucide="music" class="w-4 h-4 text-celle-gold"></i>
+              </div>
+              <span class="text-celle-gold text-xs font-bold uppercase tracking-widest">Hauptbühne</span>
+            </div>
+            <h3 class="text-white font-heading font-bold text-xl md:text-2xl">Live-Musik</h3>
+            <p class="text-white/60 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Bands & Acts den ganzen Tag</p>
           </div>
         </div>
-        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-gold to-celle-gold-dark flex items-center justify-center">
-          <i data-lucide="utensils" class="w-10 h-10 text-white/30"></i>
-          <div class="overlay">
-            <span class="text-white text-sm font-semibold">Streetfood</span>
+
+        <!-- Streetfood — oben rechts -->
+        <div class="bento-card group col-span-2 row-span-1 relative rounded-2xl overflow-hidden">
+          <img src="gallery-streetfood.jpg" alt="Streetfood-Markt im Stadtpark" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-celle-dark/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-orange-500/20 backdrop-blur-sm flex items-center justify-center">
+                <i data-lucide="utensils" class="w-3.5 h-3.5 text-orange-400"></i>
+              </div>
+              <h3 class="text-white font-heading font-bold text-lg">Streetfood</h3>
+            </div>
           </div>
         </div>
-        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-          <i data-lucide="smile" class="w-10 h-10 text-white/30"></i>
-          <div class="overlay">
-            <span class="text-white text-sm font-semibold">Kinderland</span>
+
+        <!-- Kinderland — unten mitte -->
+        <div class="bento-card group col-span-1 row-span-1 relative rounded-2xl overflow-hidden">
+          <img src="gallery-kinderland.jpg" alt="Kinderland mit Hüpfburg und Karussell" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-celle-dark/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-green-500/20 backdrop-blur-sm flex items-center justify-center">
+                <i data-lucide="smile" class="w-3.5 h-3.5 text-green-400"></i>
+              </div>
+              <h3 class="text-white font-heading font-bold text-base">Kinderland</h3>
+            </div>
           </div>
         </div>
-        <div class="gallery-card aspect-[4/3] bg-gradient-to-br from-celle-dark to-gray-900 flex items-center justify-center">
-          <i data-lucide="tv" class="w-10 h-10 text-white/30"></i>
-          <div class="overlay">
-            <span class="text-white text-sm font-semibold">Public Viewing</span>
+
+        <!-- Public Viewing — unten rechts -->
+        <div class="bento-card group col-span-1 row-span-1 relative rounded-2xl overflow-hidden ring-2 ring-celle-gold/30">
+          <img src="gallery-publicviewing.jpg" alt="Public Viewing Deutschland WM-Spiel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-celle-dark/80 via-transparent to-transparent"></div>
+          <div class="absolute top-3 right-3">
+            <span class="bg-celle-gold/90 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">WM Live</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-celle-gold/20 backdrop-blur-sm flex items-center justify-center">
+                <i data-lucide="tv" class="w-3.5 h-3.5 text-celle-gold"></i>
+              </div>
+              <h3 class="text-white font-heading font-bold text-base">Public Viewing</h3>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
